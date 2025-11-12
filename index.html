@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Auralis - Transform Your Business Communications</title>
+    <meta name="description" content="Empower every interaction with Auralis's cutting-edge cloud telephony solutions. Transform customer experience with our advanced communication platform." />
+    <meta name="author" content="Auralis" />
+    <link rel="icon" type="image/png" href="/logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Preload critical videos for faster loading - Using correct syntax -->
+    <link rel="preload" href="/videos/gif-1.mp4" as="fetch" crossorigin="anonymous" fetchpriority="high">
+    <link rel="preload" href="/videos/gif-2.mp4" as="fetch" crossorigin="anonymous" fetchpriority="high">
+    <link rel="preload" href="/videos/gif-5.mp4" as="fetch" crossorigin="anonymous" fetchpriority="high">
+    <link rel="preload" href="/videos/gif-3.mp4" as="fetch" crossorigin="anonymous" fetchpriority="low">
+    <link rel="preload" href="/videos/gif-4.mp4" as="fetch" crossorigin="anonymous" fetchpriority="low">
+
+    <meta property="og:title" content="Auralis - Transform Your Business Communications" />
+    <meta property="og:description" content="Empower every interaction with Auralis's cutting-edge cloud telephony solutions. Transform customer experience with our advanced communication platform." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/logo.png" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@auralis" />
+    <meta name="twitter:image" content="/logo.png" />
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    <script>
+      // Register service worker for video caching
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js')
+            .then((registration) => {
+              console.log('SW registered: ', registration);
+            })
+            .catch((registrationError) => {
+              console.log('SW registration failed: ', registrationError);
+            });
+        });
+      }
+    </script>
+  </body>
+</html>
